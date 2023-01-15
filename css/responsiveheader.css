@@ -1,0 +1,89 @@
+    /*nav박스 만들기*/
+    /*문서 글꼴 변경*/
+    body {
+        font-family: 'source Sans Pro';
+    }
+    /*태그 밑줄 지우고 글씨색 하얀색*/
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    /*네비바 배열*/
+    .navbar {
+        display:flex;
+        background:#37474f;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+    }
+    /*로고 폰트조절*/
+    .nav__logo {
+        font-size:24px;
+    }
+    /*로고 아이콘 색 변경*/
+    .nav__logo i {
+        color: darkorange;
+    }
+    /*리스트 강조점 지우고 배열함*/
+    .nav__menu {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    /*배열*/
+    .nav__menu li {
+        padding: 8px 12px;
+    }
+    /*링크 배열*/
+    .nav__link {
+        list-style: none;
+        padding-left: 0;
+    }
+    /*배열*/
+    .nav__link li {
+        padding: 8px 12px;
+    }
+    /*네브바 리스트 호버 효과 주기, 호버 테두리 둥글게*/
+    .nav__menu li:hover {
+        background: #d49466;
+        border-radius: 4px;
+    }
+    .navbar__toogleBtn{
+        display:none;
+        position:absolute;
+        right:32px;
+        font-size:24px;
+        color:darkorange;
+    }
+    /*max670px부터 세로창*/
+    @media screen and (max-width: 670px){
+        .navbar{
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 8px 24px;
+        }
+        .nav__menu{
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            display:none;
+        }
+        .nav__menu li {
+            width:100%;
+            text-align: center;
+        }
+        .nav__link{
+            justify-content: center;
+            width: 100%;
+            display:none;
+        }
+        .navbar__toogleBtn{
+            display:block;
+        }
+        .navbar__menu.active,
+        .navbar__link.active {
+            display: flex;
+        }
+
+    }
